@@ -1,20 +1,30 @@
-<div class="container mt-3">
-  <h1><%= @list.name %></h1>
-  <%= link_to "Add Movie",  new_list_bookmark_path(@list.id), class: "btn btn-primary mb-3" %>
+<div class="mini-banner">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
 
-  <div class="cards mt-3 mb-3">
-    <% @bookmarks.each do |bookmark| %>
-      <div class="card">
-        <%= image_tag bookmark.movie.poster_url, alt: "Poster", class: "card-img-top" %>
-        <div class="card-body">
-          <h5 class="card-title"><%= bookmark.movie.title %> - <%= bookmark.movie.rating %> ❤</h5>
-           <p class="card-text"><%= bookmark.movie.overview %></p>
+<div class="container mt-3">
+  <div class="text-right">
+    <%= link_to "Añadir Pelicula",  new_list_bookmark_path(@list.id), class: "btn power-color mb-4 mt-4" %>
+  </div>
+  <% @bookmarks.each do |bookmark| %>
+    <div class="card mb-3 shadow">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <%= image_tag bookmark.movie.poster_url, alt: "Poster", class: "w-100 h-100 rounded-left", style: "max-height: 250px; object-fit: cover;"%>
         </div>
-        <div class="card-body">
-          <p class="card-text"><%= bookmark.comment %></p>
-          <%= link_to "Delete", bookmark_path(bookmark), method: 'delete' %>
+        <div class="col-md-8 d-flex flex-column">
+          <div class="card-body">
+            <h5 class="card-title font-weight-bolder"><%= bookmark.movie.title %> - <%= bookmark.movie.rating %> <i class="fas fa-star text-warning"></i></h5>
+            <p class="card-text text-secondary"><%= bookmark.movie.overview %></p>
+          </div>
+          <div class="card-body card-text  d-flex justify-content-between align-items-center">
+            <p class="font-weight-bold">- <%= bookmark.comment %></p>
+            <%= link_to "Borrar", bookmark_path(bookmark), method: 'delete', class: "text-danger nav-link", data: { confirm: "Quieres borrar la pelicula?"} %>
+          </div>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

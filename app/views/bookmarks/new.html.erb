@@ -2,8 +2,8 @@
   <h1>New Bookmark</h1>
 
   <%= simple_form_for [@list, @bookmark] do |f| %>
-    <%= f.input :comment %>
-    <%= f.association :movie %>
+    <%= f.association :movie, label: "Selecciona una pelicula" %>
+    <%= f.input :comment, label: "Comentario:" %>
     <%= f.submit %>
   <% end %>
 </div>

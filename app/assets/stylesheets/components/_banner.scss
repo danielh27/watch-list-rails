@@ -2,19 +2,33 @@
   background-size: cover;
   background-position: center;
   padding: 200px 0;
-}
 
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-}
+  h1 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+    font-weight: bold;
+  }
 
-.banner p {
+  p {
   font-size: 20px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+}
+
+
+
+.mini-banner {
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0 50px 0;
+  background: linear-gradient(to right, #0a0154e3, #b50707c4);
+
+  h1 {
+    margin: 0;
+    color: white;
+  }
 }
