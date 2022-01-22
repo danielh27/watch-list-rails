@@ -1,0 +1,8 @@
+.power-color {
+  background-color: $power-color;
+  color: white;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.671);
+  }
+}
