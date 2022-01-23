@@ -1,0 +1,13 @@
+<div class="mini-banner">
+  <div class="container">
+    <h1>Nueva busqueda</h1>
+  </div>
+</div>
+
+
+<div class="container mt-3">
+  <%= simple_form_for(:search, method: :get, url: results_movies_path) do |f| %>
+    <%= f.input :query, label: 'Nombre de la peliula' %>
+    <%= f.submit value: 'Buscar', name: nil, class: 'btn power-color' %>
+  <% end %>
+</div>

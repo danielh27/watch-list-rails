@@ -6,5 +6,11 @@ Rails.application.routes.draw do
     resources :bookmarks, only: %i[new create]
   end
   resources :bookmarks, only: %i[destroy]
-  resources :movies, only: %i[index]
+
+  resources :movies, only: %i[index create] do
+    collection do
+      get 'search'
+      get 'results'
+    end
+  end
 end

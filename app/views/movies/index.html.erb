@@ -1,0 +1,26 @@
+<div class="mini-banner">
+  <div class="container">
+    <h1>Peliculas disponibles</h1>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <div class="text-right">
+    <%= link_to "Buscar pelicula",  search_movies_path, class: "btn power-color mb-4 mt-4" %>
+  </div>
+  <% @movies.each do |movie| %>
+    <div class="card mb-3 shadow">
+      <div class="row no-gutters">
+        <div class="col-md-3">
+          <%= image_tag movie.poster_url, alt: "Poster", class: "rounded-left"%>
+        </div>
+        <div class="col-md-9 d-flex flex-column">
+          <div class="card-body">
+            <h5 class="card-title font-weight-bolder"><%= movie.title %> - <%= movie.rating %> <i class="fas fa-star text-warning"></i></h5>
+            <p class="card-text text-secondary"><%= movie.overview %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

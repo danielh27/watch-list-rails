@@ -1,0 +1,23 @@
+<div class="mini-banner">
+  <div class="container">
+    <h1><%= @results.count %> peliculas encontradas</h1>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <% @results.each do |movie| %>
+    <div class="card mb-3 shadow">
+      <div class="row no-gutters">
+        <div class="col-md-3">
+          <%= image_tag "https://image.tmdb.org/t/p/w500/#{movie['poster_path']}", alt: "Poster", class: "rounded-left"%>
+        </div>
+        <div class="col-md-9 d-flex flex-column">
+          <div class="card-body">
+            <h5 class="card-title font-weight-bolder"><%= movie['original_title'] %> - <%= movie['vote_average'] %> <i class="fas fa-star text-warning"></i></h5>
+            <p class="card-text text-secondary"><%= movie['overview'] %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
