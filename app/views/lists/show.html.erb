@@ -11,10 +11,10 @@
   <% @bookmarks.each do |bookmark| %>
     <div class="card mb-3 shadow">
       <div class="row no-gutters">
-        <div class="col-md-4">
-          <%= image_tag bookmark.movie.poster_url, alt: "Poster", class: "w-100 h-100 rounded-left", style: "max-height: 250px; object-fit: cover;"%>
+        <div class="col-md-3">
+          <%= image_tag bookmark.movie.poster_url, alt: "Poster", class: "rounded-left"%>
         </div>
-        <div class="col-md-8 d-flex flex-column">
+        <div class="col-md-9 d-flex flex-column">
           <div class="card-body">
             <h5 class="card-title font-weight-bolder"><%= bookmark.movie.title %> - <%= bookmark.movie.rating %> <i class="fas fa-star text-warning"></i></h5>
             <p class="card-text text-secondary"><%= bookmark.movie.overview %></p>

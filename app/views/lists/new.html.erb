@@ -1,8 +1,12 @@
-<div class="container mt-3">
-  <h1>New List</h1>
+<div class="mini-banner">
+  <div class="container">
+    <h1>Añade una nueva lista</h1>
+  </div>
+</div>
 
+<div class="container mt-3">
   <%= simple_form_for @list do |f| %>
-    <%= f.input :name %>
-    <%= f.submit %>
+    <%= f.input :name, label: "Nombre de la lista" %>
+    <%= f.submit value: "Crear lista", class: "btn power-color" %>
   <% end %>
 </div>

@@ -8,27 +8,27 @@
 
 <div class="container my-5">
   <h2 class="text-left border-bottom shadow-bottom font-weight-bold">Listas Disponibles </h2>
-  <div class="cards my-5">
+    <div class="cards">
       <% @lists.each do |list| %>
-        <div class="category-card l-bg-blue-dark">
-            <div class="card-statistic-3 p-4">
-                <div class="card-icon card-icon-large"><i class="fas fa-video"></i></div>
-                <div class="mb-4">
-                    <h4 class="card-title mb-0 text-left"><%= list.name%></h5>
-                </div>
-                <div class="row align-items-center mb-2 d-flex">
-                    <div class="col-8">
-                        <h5 class="d-flex align-items-center mb-0">
-                            <%= list.movies.count %> Peliculas
-                        </h5>
+            <div class="category-card l-bg-blue-dark">
+                <div class="card-statistic-3 p-4">
+                    <div class="card-icon card-icon-large"><i class="fas fa-video"></i></div>
+                    <div class="mb-4">
+                        <h4 class="card-title mb-0 text-left"><%= list.name%></h5>
                     </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h5 class="d-flex align-items-center mb-0">
+                                <%= list.movies.count %> Peliculas
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="progress mt-1 " data-height="5" style="height: 5px;">
+                        <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <%= link_to "", list_path(list), class: "stretched-link" %>
                 </div>
-                <div class="progress mt-1 " data-height="5" style="height: 5px;">
-                    <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <%= link_to "", list_path(list), class: "stretched-link" %>
             </div>
-        </div>
       <% end %>
-  </div>
+    </div>
 </div>
