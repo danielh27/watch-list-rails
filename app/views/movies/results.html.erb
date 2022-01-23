@@ -5,6 +5,13 @@
 </div>
 
 <div class="container mt-3">
+  <%= simple_form_for(:search, method: :get, url: results_movies_path) do |f| %>
+    <%= f.input :query, label: 'Nombre de la pelicula' %>
+    <%= f.submit value: 'Buscar', name: nil, class: 'btn power-color' %>
+  <% end %>
+</div>
+
+<div class="container mt-3">
   <% @results.each do |movie| %>
     <div class="card mb-3 shadow">
       <div class="row no-gutters">
@@ -15,6 +22,9 @@
           <div class="card-body">
             <h5 class="card-title font-weight-bolder"><%= movie['original_title'] %> - <%= movie['vote_average'] %> <i class="fas fa-star text-warning"></i></h5>
             <p class="card-text text-secondary"><%= movie['overview'] %></p>
+          </div>
+          <div class="card-body card-text  d-flex justify-content-end align-items-center">
+            <%= button_to  "Añadir a la Biblioteca", movies_path, params: {movie: movie}, class: "btn power-color"%>
           </div>
         </div>
       </div>

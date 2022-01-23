@@ -7,7 +7,7 @@
 
 <div class="container mt-3">
   <%= simple_form_for(:search, method: :get, url: results_movies_path) do |f| %>
-    <%= f.input :query, label: 'Nombre de la peliula' %>
+    <%= f.input :query, label: 'Nombre de la pelicula' %>
     <%= f.submit value: 'Buscar', name: nil, class: 'btn power-color' %>
   <% end %>
 </div>

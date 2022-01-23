@@ -1,12 +1,12 @@
 <div class="mini-banner">
   <div class="container">
-    <h1>Peliculas disponibles</h1>
+    <h1><%= @movies.count %> peliculas disponibles</h1>
   </div>
 </div>
 
 <div class="container mt-3">
   <div class="text-right">
-    <%= link_to "Buscar pelicula",  search_movies_path, class: "btn power-color mb-4 mt-4" %>
+    <%= link_to "Añadir pelicula",  search_movies_path, class: "btn power-color mb-4 mt-4" %>
   </div>
   <% @movies.each do |movie| %>
     <div class="card mb-3 shadow">
