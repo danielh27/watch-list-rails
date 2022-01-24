@@ -1,8 +1,7 @@
 class ListsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
 
   def index
-    @lists = List.all
+    @lists = List.where(user_id: current_user.id)
   end
 
   def new
@@ -16,6 +15,7 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
+    @list.user = current_user
 
     if @list.save
       redirect_to lists_path
