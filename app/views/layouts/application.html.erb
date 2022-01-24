@@ -12,27 +12,8 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div class="navbar navbar-expand-sm navbar-dark nv-color navbar-lewagon fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand font-weight-bolder" href="/">
-          <%= image_tag "popcorn-icon.png", style: "width: 45px" %> La Movie
-          <%# <img src="popcorn-icon.png" /> %>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link" href="/lists">Mis listas</a>
-            <a class="nav-link" href="/lists/new">Nueva Lista</a>
-            <a class="nav-link" href="/movies">Biblioteca</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%= render 'shared/flashes' %>
+    <%= render 'shared/navbar' %>
 
     <%= yield %>
   </body>
